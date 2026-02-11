@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750">
+  <!-- Title -->
+  <text x="700" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Virtual Honeypot Security Monitoring Lab
+  </text>
+  <text x="700" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#7f8c8d">
+    Multi-VM Network Architecture with SIEM Integration
+  </text>
+
+  <!-- Host Machine Container -->
+  <rect x="50" y="90" width="1300" height="600" rx="15" fill="none" stroke="#34495e" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="100" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#34495e">
+    HOST MACHINE — VirtualBox 7.x Hypervisor
+  </text>
+
+  <!-- VM 1: Kali Linux (Attacker) -->
+  <g id="kali-vm">
+    <rect x="100" y="150" width="320" height="280" rx="12" fill="#c0392b" stroke="#922b21" stroke-width="3"/>
+    <text x="260" y="185" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      🐉 KALI LINUX
+    </text>
+    <text x="260" y="210" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#f5b7b1">
+      Attacker Simulation VM
+    </text>
+    <line x1="130" y1="225" x2="390" y2="225" stroke="#f5b7b1" stroke-width="1" opacity="0.5"/>
+
+    <!-- Tools -->
+    <rect x="130" y="240" width="120" height="50" rx="8" fill="#922b21"/>
+    <text x="190" y="260" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" fill="#f5b7b1">NMAP</text>
+    <text x="190" y="278" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f5b7b1">Port Scanning</text>
+
+    <rect x="270" y="240" width="120" height="50" rx="8" fill="#922b21"/>
+    <text x="330" y="260" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" fill="#f5b7b1">HYDRA</text>
+    <text x="330" y="278" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f5b7b1">Brute-Force</text>
+
+    <rect x="130" y="305" width="260" height="50" rx="8" fill="#922b21"/>
+    <text x="260" y="325" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" fill="#f5b7b1">SSH SESSION SIM</text>
+    <text x="260" y="343" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f5b7b1">Post-auth command execution</text>
+
+    <!-- IP -->
+    <rect x="130" y="375" width="260" height="35" rx="6" fill="#7b241c"/>
+    <text x="260" y="397" font-family="monospace" font-size="13" text-anchor="middle" fill="white">
+      IP: 10.0.0.20
+    </text>
+  </g>
+
+  <!-- Arrow: Kali → Cowrie -->
+  <g id="arrow-attack">
+    <line x1="420" y1="290" x2="490" y2="290" stroke="#e74c3c" stroke-width="3"/>
+    <polygon points="490,285 500,290 490,295" fill="#e74c3c"/>
+    <text x="455" y="278" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#e74c3c">SSH</text>
+    <text x="455" y="305" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#e74c3c">Attack</text>
+  </g>
+
+  <!-- VM 2: Ubuntu Server (Cowrie Honeypot) -->
+  <g id="cowrie-vm">
+    <rect x="500" y="150" width="320" height="280" rx="12" fill="#27ae60" stroke="#1e8449" stroke-width="3"/>
+    <text x="660" y="185" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      🛡 UBUNTU SERVER
+    </text>
+    <text x="660" y="210" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#a9dfbf">
+      Cowrie SSH Honeypot
+    </text>
+    <line x1="530" y1="225" x2="790" y2="225" stroke="#a9dfbf" stroke-width="1" opacity="0.5"/>
+
+    <!-- Components -->
+    <rect x="530" y="240" width="260" height="40" rx="8" fill="#1e8449"/>
+    <text x="660" y="260" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" fill="white">COWRIE 2.5+</text>
+    <text x="660" y="274" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#a9dfbf">SSH/Telnet Honeypot Service</text>
+
+    <rect x="530" y="290" width="120" height="40" rx="8" fill="#1e8449"/>
+    <text x="590" y="310" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="white">:2222</text>
+    <text x="590" y="324" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#a9dfbf">SSH Trap</text>
+
+    <rect x="670" y="290" width="120" height="40" rx="8" fill="#1e8449"/>
+    <text x="730" y="310" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="white">:2223</text>
+    <text x="730" y="324" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#a9dfbf">Telnet Trap</text>
+
+    <rect x="530" y="345" width="260" height="30" rx="8" fill="#1e8449"/>
+    <text x="660" y="365" font-family="monospace" font-size="11" text-anchor="middle" fill="white">JSON Logging → cowrie.json</text>
+
+    <!-- IP -->
+    <rect x="530" y="390" width="260" height="35" rx="6" fill="#196f3d"/>
+    <text x="660" y="412" font-family="monospace" font-size="13" text-anchor="middle" fill="white">
+      IP: 10.0.0.10
+    </text>
+  </g>
+
+  <!-- Arrow: Cowrie → ELK -->
+  <g id="arrow-logs">
+    <line x1="820" y1="290" x2="890" y2="290" stroke="#f39c12" stroke-width="3"/>
+    <polygon points="890,285 900,290 890,295" fill="#f39c12"/>
+    <text x="855" y="278" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f39c12">Log</text>
+    <text x="855" y="305" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#f39c12">Forward</text>
+  </g>
+
+  <!-- VM 3: ELK Stack (SIEM) -->
+  <g id="elk-vm">
+    <rect x="900" y="150" width="400" height="280" rx="12" fill="#2980b9" stroke="#1a5276" stroke-width="3"/>
+    <text x="1100" y="185" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      📊 ELK SIEM SERVER
+    </text>
+    <text x="1100" y="210" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#aed6f1">
+      Security Information &amp; Event Management
+    </text>
+    <line x1="930" y1="225" x2="1270" y2="225" stroke="#aed6f1" stroke-width="1" opacity="0.5"/>
+
+    <!-- ELK Components -->
+    <rect x="930" y="240" width="110" height="70" rx="8" fill="#1a5276"/>
+    <text x="985" y="265" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" fill="#f39c12">LOGSTASH</text>
+    <text x="985" y="282" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#aed6f1">Log Ingestion</text>
+    <text x="985" y="298" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#aed6f1">GeoIP Enrichment</text>
+
+    <rect x="1055" y="240" width="110" height="70" rx="8" fill="#1a5276"/>
+    <text x="1110" y="265" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" fill="#2ecc71">ELASTIC</text>
+    <text x="1110" y="282" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#aed6f1">Search &amp; Index</text>
+    <text x="1110" y="298" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#aed6f1">:9200</text>
+
+    <rect x="1180" y="240" width="110" height="70" rx="8" fill="#1a5276"/>
+    <text x="1235" y="265" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" fill="#e74c3c">KIBANA</text>
+    <text x="1235" y="282" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#aed6f1">Dashboards</text>
+    <text x="1235" y="298" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#aed6f1">:5601</text>
+
+    <!-- Data Flow -->
+    <polygon points="1043,275 1053,275 1048,270 1053,275 1048,280" fill="#f39c12"/>
+    <polygon points="1168,275 1178,275 1173,270 1178,275 1173,280" fill="#f39c12"/>
+
+    <!-- Dashboard Panels -->
+    <rect x="930" y="325" width="360" height="60" rx="8" fill="#1a5276"/>
+    <text x="1110" y="345" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Dashboard Visualizations</text>
+    <text x="1110" y="365" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#aed6f1">
+      Login Timeline | Top IPs | Password Analysis | Geo Map
+    </text>
+    <text x="1110" y="380" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#aed6f1">
+      Event Distribution | Session Duration | Command Log
+    </text>
+
+    <!-- IP -->
+    <rect x="930" y="395" width="360" height="30" rx="6" fill="#154360"/>
+    <text x="1110" y="415" font-family="monospace" font-size="13" text-anchor="middle" fill="white">
+      IP: 10.0.0.30
+    </text>
+  </g>
+
+  <!-- Network Bar -->
+  <rect x="100" y="460" width="1200" height="50" rx="10" fill="#2c3e50"/>
+  <text x="700" y="490" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#ecf0f1">
+    🔒 Internal Virtual Network — 10.0.0.0/24 (VirtualBox intnet)
+  </text>
+
+  <!-- Data Flow Legend -->
+  <g transform="translate(100, 540)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+      Data Flow:
+    </text>
+
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="350" height="100" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+      <circle cx="20" cy="20" r="8" fill="#e74c3c"/>
+      <text x="38" y="25" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">
+        1. Attacker scans &amp; brute-forces honeypot
+      </text>
+      <circle cx="20" cy="45" r="8" fill="#27ae60"/>
+      <text x="38" y="50" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">
+        2. Cowrie captures &amp; logs all interactions
+      </text>
+      <circle cx="20" cy="70" r="8" fill="#f39c12"/>
+      <text x="38" y="75" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">
+        3. Logs forwarded to ELK for analysis
+      </text>
+    </g>
+
+    <!-- Tech Stack -->
+    <g transform="translate(400, 25)">
+      <rect x="0" y="0" width="350" height="100" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+      <text x="15" y="22" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">
+        Technology Stack
+      </text>
+      <text x="15" y="45" font-family="monospace" font-size="11" fill="#7f8c8d">
+        VirtualBox • Ubuntu 22.04 • Kali Linux
+      </text>
+      <text x="15" y="65" font-family="monospace" font-size="11" fill="#7f8c8d">
+        Cowrie • Elasticsearch • Logstash • Kibana
+      </text>
+      <text x="15" y="85" font-family="monospace" font-size="11" fill="#7f8c8d">
+        Nmap • Hydra • Bash • JSON
+      </text>
+    </g>
+
+    <!-- Results -->
+    <g transform="translate(790, 25)">
+      <rect x="0" y="0" width="310" height="100" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+      <text x="15" y="22" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">
+        Key Results
+      </text>
+      <circle cx="20" cy="42" r="6" fill="#27ae60"/>
+      <text x="33" y="47" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">500+ credential attempts captured</text>
+      <circle cx="20" cy="62" r="6" fill="#27ae60"/>
+      <text x="33" y="67" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">100% scan detection rate</text>
+      <circle cx="20" cy="82" r="6" fill="#27ae60"/>
+      <text x="33" y="87" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Real-time intrusion monitoring</text>
+    </g>
+  </g>
+</svg>
