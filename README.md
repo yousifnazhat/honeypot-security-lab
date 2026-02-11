@@ -1,10 +1,10 @@
-# 🛡 Virtual Honeypot Security Monitoring Lab
+#  Virtual Honeypot Security Monitoring Lab
 
 > A virtualized cybersecurity lab that captures, logs, and analyzes real-world attack behavior using honeypot systems and SIEM monitoring tools.
 
 ---
 
-## 📋 Project Overview
+##  Project Overview
 
 This project deploys a multi-VM security environment simulating an enterprise network using VirtualBox. SSH honeypot services collect intrusion attempts, and attack traffic is analyzed through centralized logging dashboards to identify attacker behavior patterns.
 
@@ -32,7 +32,7 @@ See [`docs/architecture-diagram.svg`](docs/architecture-diagram.svg) for a detai
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 - Simulate real network attack scenarios safely in a virtual environment
 - Deploy honeypot infrastructure to collect attacker interaction data
@@ -42,7 +42,7 @@ See [`docs/architecture-diagram.svg`](docs/architecture-diagram.svg) for a detai
 
 ---
 
-## 🏗 System Architecture
+##  System Architecture
 
 | Component | Role | Details |
 |---|---|---|
@@ -138,7 +138,7 @@ See: [`configs/logstash/cowrie-pipeline.conf`](configs/logstash/cowrie-pipeline.
 
 ---
 
-## 📊 Results & Findings
+##  Results & Findings
 
 | Metric | Result |
 |---|---|
@@ -170,7 +170,7 @@ See: [`configs/logstash/cowrie-pipeline.conf`](configs/logstash/cowrie-pipeline.
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - [ ] Deploy additional honeypots (HTTP via Dionaea, SMB via HoneySMB)
 - [ ] Add automated attack-simulation scripts with randomized timing
@@ -181,7 +181,7 @@ See: [`configs/logstash/cowrie-pipeline.conf`](configs/logstash/cowrie-pipeline.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 honeypot-security-lab/
@@ -205,13 +205,13 @@ honeypot-security-lab/
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👤 Author
+##  Author
 
 **Yousif Nazhat**
 - [GitHub](https://github.com/yousifnazhat)
