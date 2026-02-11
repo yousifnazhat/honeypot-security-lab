@@ -54,7 +54,7 @@ See [`docs/architecture-diagram.svg`](docs/architecture-diagram.svg) for a detai
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -100,7 +100,7 @@ chmod +x scripts/run-attack-sim.sh
 
 ---
 
-## 🔧 Implementation Details
+##  Implementation Details
 
 ### Honeypot Deployment (Cowrie)
 
@@ -216,3 +216,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 **Yousif Nazhat**
 - [GitHub](https://github.com/yousifnazhat)
 - [LinkedIn](https://linkedin.com/in/yousif-nazhat-526027296)
+- [ePortfolio] (https://yousifsportfolio.vercel.app/) 
